@@ -1,10 +1,10 @@
 ### **Dimension Compatibility Rule**
 
 For any matrix product $XY$ to be defined, the number of columns in the first matrix $X$ must equal the number of rows in the second matrix $Y$:
-$$
 
-\text{If } X \text{ is } m \times k \text{ and } Y \text{ is } k \times n\text{, then } XY \text{ is defined and has size } m \times n.
-$$
+
+$$\text{If } X \text{ is } m \times k \text{ and } Y \text{ is } k \times n\text{, then } XY \text{ is defined and has size } m \times n.$$
+
 
 If the inner dimensions do not match, the product is **undefined**.
 

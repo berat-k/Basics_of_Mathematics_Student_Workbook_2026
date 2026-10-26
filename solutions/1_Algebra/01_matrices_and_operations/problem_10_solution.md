@@ -3,9 +3,11 @@
 ## 1. The Original Problem
 
 Given
+
 $$
 
 A=\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix},\qquad B=\begin{pmatrix}1&2\\-1&0\\3&1\end{pmatrix}.
+
 $$
 
 Denote the columns of $B$ by $b_1,b_2$.
@@ -29,9 +31,11 @@ We want to:
 
 - **The Column-by-Column Definition of Matrix Multiplication:**
   If a matrix $B$ is viewed as a block of column vectors $B = \begin{pmatrix} b_1 & b_2 & \\ dots & b_p \end{pmatrix}$, then multiplying $A$ by $B$ is equivalent to distributing $A$ across each column:
+
 $$
 
 AB = A \begin{pmatrix} b_1 & b_2 & \\ dots & b_p \end{pmatrix} = \begin{pmatrix} A b_1 & A b_2 & \\ dots & A b_p \end{pmatrix}.
+
 $$
 
 - Each column of the product is simply the matrix $A$ acting on the corresponding column of $B$.
@@ -42,22 +46,28 @@ $$
 
 Matrix $A$ is $2 \times 3$ and matrix $B$ is $3 \times 2$.
 The two columns of $B$ are:
+
 $$
 
 b_1 = \begin{pmatrix}1\\-1\\3\end{pmatrix},\qquad b_2 = \begin{pmatrix}2\\0\\1\end{pmatrix}.
+
 $$
 
 ### Step 1: Compute $Ab_1$ and $Ab_2$
 - **For $Ab_1$:**
+
 $$
 
 Ab_1 = \begin{pmatrix}1&2&0\\0&1&1\end{pmatrix}\begin{pmatrix}1\\-1\\3\end{pmatrix} = \begin{pmatrix}1(1) + 2(-1) + 0(3) \\ 0(1) + 1(-1) + 1(3)\end{pmatrix} = \begin{pmatrix}1 - 2 + 0 \\ 0 - 1 + 3\end{pmatrix} = \begin{pmatrix}-1\\2\end{pmatrix}.
+
 $$
 
 - **For $Ab_2$:**
+
 $$
 
 Ab_2 = \begin{pmatrix}1&2&0\\0&1&1\end{pmatrix}\begin{pmatrix}2\\0\\1\end{pmatrix} = \begin{pmatrix}1(2) + 2(0) + 0(1) \\ 0(2) + 1(0) + 1(1)\end{pmatrix} = \begin{pmatrix}2 + 0 + 0 \\ 0 + 0 + 1\end{pmatrix} = \begin{pmatrix}2\\1\end{pmatrix}.
+
 $$
 
 ### Step 2: Compute the Full Product Matrix $AB$
@@ -68,32 +78,40 @@ $A$ ($2 \times 3$) and $B$ ($3 \times 2$) produce a $2 \times 2$ matrix:
 - **Row 2, Column 2:** $0(2) + 1(0) + 1(1) = 0 + 0 + 1 = 1$
 
 Putting the entries together:
+
 $$
 
 AB = \begin{pmatrix}-1 & 2 \\ 2 & 1\end{pmatrix}.
+
 $$
 
 ### Step 3: Compare and Explain the Relationship
 Placing the vectors $Ab_1$ and $Ab_2$ side by side into a matrix:
+
 $$
 
 \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix} \\ begin{pmatrix}-1\\2\end{pmatrix} & \begin{pmatrix}2\\1\end{pmatrix} \end{pmatrix} = \begin{pmatrix}-1 & 2 \\ 2 & 1\end{pmatrix}.
+
 $$
 
 This is identical to $AB$.
 
 **Why this holds:**
 By the definition of matrix multiplication, the $(i, j)$-entry of $AB$ is:
+
 $$
 
 (AB)_{ij} = \sum_{k=1}^3 a_{ik} b_{kj}.
+
 $$
 
 The numbers $b_{1j}, b_{2j}, b_{3j}$ are precisely the entries of the $j$-th column vector $b_j$.
 Therefore:
+
 $$
 
 \sum_{k=1}^3 a_{ik} b_{kj} = (\text{row } i \text{ of } A) \cdot b_j = (Ab_j)_i.
+
 $$
 
 Because every entry in the $j$-th column of $AB$ equals the corresponding entry in the vector $Ab_j$, the entire $j$-th column of $AB$ is $Ab_j$.
@@ -112,9 +130,11 @@ Because every entry in the $j$-th column of $AB$ equals the corresponding entry 
 ## 6. Quick Verification
 
 Check the difference:
+
 $$
 
 AB - \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix}-1 & 2 \\ 2 & 1\end{pmatrix} - \begin{pmatrix}-1 & 2 \\ 2 & 1\end{pmatrix} = \begin{pmatrix}0 & 0 \\ 0 & 0\end{pmatrix}.
+
 $$
 
 The identity holds unconditionally.

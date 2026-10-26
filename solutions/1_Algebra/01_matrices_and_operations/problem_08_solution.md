@@ -3,9 +3,11 @@
 ## 1. The Original Problem
 
 For
+
 $$
 
 A=\begin{pmatrix}1&2&-1\\2&4&1\\-1&1&3\end{pmatrix}
+
 $$
 
 perform, in order:
@@ -38,43 +40,53 @@ We want to apply three elementary row operations to a $3 \times 3$ matrix sequen
 ## 4. Step-by-Step Solution
 
 We start with the original matrix:
+
 $$
 
 A = \begin{pmatrix}1&2&-1\\2&4&1\\-1&1&3\end{pmatrix}.
+
 $$
 
 ### Step 1: Perform $R_2 \leftarrow R_2 - 2R_1$
 We subtract twice row 1 from row 2.
 - $R_1 = (1, 2, -1)$, so $2R_1 = (2, 4, -2)$.
 - Subtract from current $R_2 = (2, 4, 1)$:
+
 $$
 
 \text{New } R_2 = (2 - 2, 4 - 4, 1 - (-2)) = (0, 0, 3).
+
 $$
 
 - Rows 1 and 3 remain unchanged.
 
 The matrix after Step 1 is:
+
 $$
 
 A_1 = \begin{pmatrix}1&2&-1\\0&0&3\\-1&1&3\end{pmatrix}.
+
 $$
 
 ### Step 2: Perform $R_3 \leftarrow R_3 + R_1$
 We add row 1 to row 3.
 - $R_1 = (1, 2, -1)$.
 - Add to current $R_3 = (-1, 1, 3)$:
+
 $$
 
 \text{New } R_3 = (-1 + 1, 1 + 2, 3 + (-1)) = (0, 3, 2).
+
 $$
 
 - Rows 1 and 2 remain unchanged.
 
 The matrix after Step 2 is:
+
 $$
 
 A_2 = \begin{pmatrix}1&2&-1\\0&0&3\\0&3&2\end{pmatrix}.
+
 $$
 
 ### Step 3: Interchange $R_2$ and $R_3$ ($R_2 \leftrightarrow R_3$)
@@ -83,9 +95,11 @@ We swap the second and third rows:
 - The new third row is $(0, 0, 3)$.
 
 The matrix after Step 3 is:
+
 $$
 
 A_3 = \begin{pmatrix}1&2&-1\\0&3&2\\0&0&3\end{pmatrix}.
+
 $$
 
 *(Note: $A_3$ is now in upper triangular row echelon form.)*
@@ -109,31 +123,39 @@ Each elementary row operation has an exact inverse operation that restores the p
 
 Let us verify by applying the reverse operations to $A_3$ in reverse order:
 1. Apply $R_2 \leftrightarrow R_3$ to $A_3$:
+
 $$
 
 \begin{pmatrix}1&2&-1\\0&3&2\\0&0&3\end{pmatrix} \xrightarrow{R_2 \leftrightarrow R_3} \begin{pmatrix}1&2&-1\\0&0&3\\0&3&2\end{pmatrix} = A_2. \quad \checkmark
+
 $$
 
 2. Apply $R_3 \leftarrow R_3 - R_1$ to $A_2$:
+
 $$
 
 R_3 = (0, 3, 2) - (1, 2, -1) = (-1, 1, 3).
 
 $$
+
 $$
 
 \begin{pmatrix}1&2&-1\\0&0&3\\0&3&2\end{pmatrix} \xrightarrow{R_3 \leftarrow R_3 - R_1} \begin{pmatrix}1&2&-1\\0&0&3\\-1&1&3\end{pmatrix} = A_1. \quad \checkmark
+
 $$
 
 3. Apply $R_2 \leftarrow R_2 + 2R_1$ to $A_1$:
+
 $$
 
 R_2 = (0, 0, 3) + 2(1, 2, -1) = (2, 4, 1).
 
 $$
+
 $$
 
 \begin{pmatrix}1&2&-1\\0&0&3\\-1&1&3\end{pmatrix} \xrightarrow{R_2 \leftarrow R_2 + 2R_1} \begin{pmatrix}1&2&-1\\2&4&1\\-1&1&3\end{pmatrix} = A. \quad \checkmark
+
 $$
 
 The original matrix $A$ is restored perfectly.
