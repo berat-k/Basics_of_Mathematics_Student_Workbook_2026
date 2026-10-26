@@ -5,7 +5,7 @@
 Given
 
 $$
-A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \qquad B = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+A = \begin{pmatrix} 1 & 1 \\\\ 0 & 1 \end{pmatrix}, \qquad B = \begin{pmatrix} a & b \\\\ c & d \end{pmatrix}
 $$
 
 Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form of all such matrices $B$.
@@ -33,14 +33,14 @@ Although matrix multiplication is generally noncommutative, some specific pairs 
 Multiply $A$ by $B$:
 
 $$
-AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} 1\cdot a + 1\cdot c & 1\cdot b + 1\cdot d \\ 0\cdot a + 1\cdot c & 0\cdot b + 1\cdot d \end{pmatrix} = \begin{pmatrix} a+c & b+d \\ c & d \end{pmatrix}
+AB = \begin{pmatrix} 1 & 1 \\\\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\\\ c & d \end{pmatrix} = \begin{pmatrix} 1\cdot a + 1\cdot c & 1\cdot b + 1\cdot d \\\\ 0\cdot a + 1\cdot c & 0\cdot b + 1\cdot d \end{pmatrix} = \begin{pmatrix} a+c & b+d \\\\ c & d \end{pmatrix}
 $$
 
 ### Step 2: Compute $BA$
 Multiply $B$ by $A$:
 
 $$
-BA = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a\cdot 1 + b\cdot 0 & a\cdot 1 + b\cdot 1 \\ c\cdot 1 + d\cdot 0 & c\cdot 1 + d\cdot 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\ c & c+d \end{pmatrix}
+BA = \begin{pmatrix} a & b \\\\ c & d \end{pmatrix} \begin{pmatrix} 1 & 1 \\\\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a\cdot 1 + b\cdot 0 & a\cdot 1 + b\cdot 1 \\\\ c\cdot 1 + d\cdot 0 & c\cdot 1 + d\cdot 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\\\ c & c+d \end{pmatrix}
 $$
 
 ### Step 3: Set $AB = BA$ and Equate Entries
@@ -73,14 +73,14 @@ $$
 - **General form of matrix $B$:**
 
 $$
-B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix}
+B = \begin{pmatrix} a & b \\\\ 0 & a \end{pmatrix}
 $$
 
 - **Structural meaning:**
   All commuting matrices are upper triangular with equal diagonal entries. We can write $B$ as:
 
 $$
-B = a \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + b \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = a I + b(A - I) = (a - b)I + bA
+B = a \begin{pmatrix} 1 & 0 \\\\ 0 & 1 \end{pmatrix} + b \begin{pmatrix} 0 & 1 \\\\ 0 & 0 \end{pmatrix} = a I + b(A - I) = (a - b)I + bA
 $$
 
   Thus, every matrix that commutes with $A$ is an affine combination (a polynomial) of $A$ and the identity matrix $I$.
@@ -89,17 +89,23 @@ $$
 
 ## 6. Quick Verification
 
-Substitute $B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix}$ back into both products:
+Substitute matrix $B$ back into both products:
 
 $$
-AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
+AB = \begin{pmatrix} 1 & 1 \\\\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\\\ 0 & a \end{pmatrix} = \begin{pmatrix} a & a+b \\\\ 0 & a \end{pmatrix}
 $$
 
 $$
-BA = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
+BA = \begin{pmatrix} a & b \\\\ 0 & a \end{pmatrix} \begin{pmatrix} 1 & 1 \\\\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\\\ 0 & a \end{pmatrix}
 $$
 
-Since $AB - BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$, $AB = BA$ holds for all $a, b \in \mathbb{R}$.
+Subtracting the two shows:
+
+$$
+AB - BA = \begin{pmatrix} 0 & 0 \\\\ 0 & 0 \end{pmatrix}
+$$
+
+Thus $AB = BA$ holds identically for all $a, b \in \mathbb{R}$.
 
 ---
 
@@ -112,4 +118,4 @@ Since $AB - BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$, $AB = BA$ holds 
 
 ## 8. How I Would Explain This in Class
 
-> "To find when $A$ and $B$ commute, we calculate both $AB$ and $BA$ in terms of $a, b, c, d$ and set their entries equal. The equations immediately force $c = 0$ and $d = a$, while $b$ and $a$ remain free parameters. This means all matrices that commute with $A$ have the form $\begin{pmatrix}a & b \\ 0 & a\end{pmatrix}$, which represents any linear combination of the identity matrix $I$ and the matrix $A$."
+> "To find when $A$ and $B$ commute, we calculate both $AB$ and $BA$ in terms of $a, b, c, d$ and set their entries equal. The equations immediately force $c = 0$ and $d = a$, while $b$ and $a$ remain free parameters. This means all matrices that commute with $A$ have the form with equal diagonal entries $a$ and upper-right parameter $b$, which represents any linear combination of the identity matrix $I$ and the matrix $A$."

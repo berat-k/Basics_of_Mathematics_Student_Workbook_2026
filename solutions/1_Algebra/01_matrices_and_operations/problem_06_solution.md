@@ -5,7 +5,7 @@
 For the matrices:
 
 $$
-A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix}
+A = \begin{pmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\\\ -1 & 3 \end{pmatrix}
 $$
 
 compute $A^T$, $B^T$, and $AB$. Then verify in this example that:
@@ -48,14 +48,14 @@ $$
   Writing rows as columns gives the $3 \times 2$ matrix:
 
 $$
-A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}
+A^T = \begin{pmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 3 & 6 \end{pmatrix}
 $$
 
 - $B$ is $3 \times 2$, with Row 1 = $(1, 0)$, Row 2 = $(2, 1)$, and Row 3 = $(-1, 3)$.
   Writing rows as columns gives the $2 \times 3$ matrix:
 
 $$
-B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}
+B^T = \begin{pmatrix} 1 & 2 & -1 \\\\ 0 & 1 & 3 \end{pmatrix}
 $$
 
 ### Step 2: Compute the Product $AB$
@@ -66,14 +66,14 @@ $A$ ($2 \times 3$) and $B$ ($3 \times 2$) produce a $2 \times 2$ matrix:
 - **Row 2, Column 2:** $4(0) + 5(1) + 6(3) = 0 + 5 + 18 = 23$
 
 $$
-AB = \begin{pmatrix} 2 & 11 \\ 8 & 23 \end{pmatrix}
+AB = \begin{pmatrix} 2 & 11 \\\\ 8 & 23 \end{pmatrix}
 $$
 
 ### Step 3: Compute $(AB)^T$
 Transposing the $2 \times 2$ matrix $AB$ swaps its off-diagonal entries:
 
 $$
-(AB)^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}
+(AB)^T = \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix}
 $$
 
 ### Step 4: Compute $B^T A^T$
@@ -88,18 +88,25 @@ Multiply $B^T$ ($2 \times 3$) by $A^T$ ($3 \times 2$):
   $$0(4) + 1(5) + 3(6) = 0 + 5 + 18 = 23$$
 
 $$
-B^T A^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}
+B^T A^T = \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix}
 $$
 
 ---
 
 ## 5. Final Answer & Conclusion
 
-- $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
-- $B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$
-- $AB = \begin{pmatrix} 2 & 11 \\ 8 & 23 \end{pmatrix}$
-- $(AB)^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$
-- $B^T A^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$
+- The transposes are:
+
+$$
+A^T = \begin{pmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 3 & 6 \end{pmatrix}, \qquad B^T = \begin{pmatrix} 1 & 2 & -1 \\\\ 0 & 1 & 3 \end{pmatrix}
+$$
+
+- The products are:
+
+$$
+AB = \begin{pmatrix} 2 & 11 \\\\ 8 & 23 \end{pmatrix}, \qquad (AB)^T = \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix}, \qquad B^T A^T = \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix}
+$$
+
 - **Conclusion:** Both calculations yield the exact same matrix, verifying that $(AB)^T = B^T A^T$.
 - **Why the order reverses:** In $AB$, entry $(i, j)$ is the dot product of (Row $i$ of $A$) and (Column $j$ of $B$). When transposed to $(AB)^T$, that dot product sits at position $(j, i)$. To get that same dot product in row $j$, column $i$ from transposes, the $j$-th row of the first matrix must be Column $j$ of $B$ (which is Row $j$ of $B^T$), and the $i$-th column must be Row $i$ of $A$ (which is Column $i$ of $A^T$). Thus $B^T$ must come first.
 
@@ -110,7 +117,7 @@ $$
 Subtract the two results:
 
 $$
-(AB)^T - B^T A^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix} - \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+(AB)^T - B^T A^T = \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix} - \begin{pmatrix} 2 & 8 \\\\ 11 & 23 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\\\ 0 & 0 \end{pmatrix}
 $$
 
 The identity holds with complete mathematical exactness.
@@ -126,4 +133,4 @@ The identity holds with complete mathematical exactness.
 
 ## 8. How I Would Explain This in Class
 
-> "Transposing swaps the rows and columns of a matrix. When we multiply two matrices and transpose the result, the order of multiplication must reverse: $(AB)^T = B^T A^T$. In our calculation, $(AB)^T$ and $B^T A^T$ both equal $\begin{pmatrix}2&8\\11&23\end{pmatrix}$, confirming that the row-column dot products match only when the factor order is flipped."
+> "Transposing swaps the rows and columns of a matrix. When we multiply two matrices and transpose the result, the order of multiplication must reverse: $(AB)^T = B^T A^T$. In our calculation, $(AB)^T$ and $B^T A^T$ both yield the exact same $2 \times 2$ matrix with rows $(2, 8)$ and $(11, 23)$, confirming that row-column dot products match only when factor order is flipped."

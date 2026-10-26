@@ -5,7 +5,7 @@
 Given
 
 $$
-A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 2 \\ -1 & 0 \\ 3 & 1 \end{pmatrix}
+A = \begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 1 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 2 \\\\ -1 & 0 \\\\ 3 & 1 \end{pmatrix}
 $$
 
 Denote the columns of $B$ by $b_1, b_2$.
@@ -28,7 +28,7 @@ We want to:
 ## 3. Before Calculating: What Idea Do We Need?
 
 - **The Column-by-Column Definition of Matrix Multiplication:**
-  If a matrix $B$ is viewed as a block of column vectors $B = \begin{pmatrix} b_1 & b_2 & \dots & b_p \end{pmatrix}$, then multiplying $A$ by $B$ is equivalent to distributing $A$ across each column:
+  If a matrix $B$ is viewed as a block of column vectors $(b_1, b_2, \dots, b_p)$, then multiplying $A$ by $B$ is equivalent to distributing $A$ across each column:
 
 $$
 AB = A \begin{pmatrix} b_1 & b_2 & \dots & b_p \end{pmatrix} = \begin{pmatrix} A b_1 & A b_2 & \dots & A b_p \end{pmatrix}
@@ -44,20 +44,20 @@ Matrix $A$ is $2 \times 3$ and matrix $B$ is $3 \times 2$.
 The two columns of $B$ are:
 
 $$
-b_1 = \begin{pmatrix} 1 \\ -1 \\ 3 \end{pmatrix}, \qquad b_2 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}
+b_1 = \begin{pmatrix} 1 \\\\ -1 \\\\ 3 \end{pmatrix}, \qquad b_2 = \begin{pmatrix} 2 \\\\ 0 \\\\ 1 \end{pmatrix}
 $$
 
 ### Step 1: Compute $Ab_1$ and $Ab_2$
 - **For $Ab_1$:**
 
 $$
-Ab_1 = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ -1 \\ 3 \end{pmatrix} = \begin{pmatrix} 1(1) + 2(-1) + 0(3) \\ 0(1) + 1(-1) + 1(3) \end{pmatrix} = \begin{pmatrix} 1 - 2 + 0 \\ 0 - 1 + 3 \end{pmatrix} = \begin{pmatrix} -1 \\ 2 \end{pmatrix}
+Ab_1 = \begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 1 \\\\ -1 \\\\ 3 \end{pmatrix} = \begin{pmatrix} 1(1) + 2(-1) + 0(3) \\\\ 0(1) + 1(-1) + 1(3) \end{pmatrix} = \begin{pmatrix} 1 - 2 + 0 \\\\ 0 - 1 + 3 \end{pmatrix} = \begin{pmatrix} -1 \\\\ 2 \end{pmatrix}
 $$
 
 - **For $Ab_2$:**
 
 $$
-Ab_2 = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1(2) + 2(0) + 0(1) \\ 0(2) + 1(0) + 1(1) \end{pmatrix} = \begin{pmatrix} 2 + 0 + 0 \\ 0 + 0 + 1 \end{pmatrix} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+Ab_2 = \begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 2 \\\\ 0 \\\\ 1 \end{pmatrix} = \begin{pmatrix} 1(2) + 2(0) + 0(1) \\\\ 0(2) + 1(0) + 1(1) \end{pmatrix} = \begin{pmatrix} 2 + 0 + 0 \\\\ 0 + 0 + 1 \end{pmatrix} = \begin{pmatrix} 2 \\\\ 1 \end{pmatrix}
 $$
 
 ### Step 2: Compute the Full Product Matrix $AB$
@@ -70,14 +70,14 @@ $A$ ($2 \times 3$) and $B$ ($3 \times 2$) produce a $2 \times 2$ matrix:
 Putting the entries together:
 
 $$
-AB = \begin{pmatrix} -1 & 2 \\ 2 & 1 \end{pmatrix}
+AB = \begin{pmatrix} -1 & 2 \\\\ 2 & 1 \end{pmatrix}
 $$
 
 ### Step 3: Compare and Explain the Relationship
 Placing the vectors $Ab_1$ and $Ab_2$ side by side into a matrix:
 
 $$
-\begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix} \begin{pmatrix} -1 \\ 2 \end{pmatrix} & \begin{pmatrix} 2 \\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} -1 & 2 \\ 2 & 1 \end{pmatrix}
+\begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix} \begin{pmatrix} -1 \\\\ 2 \end{pmatrix} & \begin{pmatrix} 2 \\\\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} -1 & 2 \\\\ 2 & 1 \end{pmatrix}
 $$
 
 This is identical to $AB$.
@@ -102,10 +102,25 @@ Because every entry in the $j$-th column of $AB$ equals the corresponding entry 
 
 ## 5. Final Answer & Conclusion
 
-- $Ab_1 = \begin{pmatrix} -1 \\ 2 \end{pmatrix}$
-- $Ab_2 = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$
-- $AB = \begin{pmatrix} -1 & 2 \\ 2 & 1 \end{pmatrix}$
-- **Conclusion:** $AB = \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix}$. Matrix multiplication does not have to be done as independent single-number dot products; it can be understood as applying transformation $A$ to each column of $B$ simultaneously.
+- The matrix-vector products are:
+
+$$
+Ab_1 = \begin{pmatrix} -1 \\\\ 2 \end{pmatrix}, \qquad Ab_2 = \begin{pmatrix} 2 \\\\ 1 \end{pmatrix}
+$$
+
+- The full matrix product is:
+
+$$
+AB = \begin{pmatrix} -1 & 2 \\\\ 2 & 1 \end{pmatrix}
+$$
+
+- **Conclusion:**
+
+$$
+AB = \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix}
+$$
+
+  Matrix multiplication does not have to be done as independent single-number dot products; it can be understood as applying transformation $A$ to each column of $B$ simultaneously.
 
 ---
 
@@ -114,7 +129,7 @@ Because every entry in the $j$-th column of $AB$ equals the corresponding entry 
 Check the difference:
 
 $$
-AB - \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix} -1 & 2 \\ 2 & 1 \end{pmatrix} - \begin{pmatrix} -1 & 2 \\ 2 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+AB - \begin{pmatrix} Ab_1 & Ab_2 \end{pmatrix} = \begin{pmatrix} -1 & 2 \\\\ 2 & 1 \end{pmatrix} - \begin{pmatrix} -1 & 2 \\\\ 2 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\\\ 0 & 0 \end{pmatrix}
 $$
 
 The identity holds unconditionally.
@@ -130,4 +145,4 @@ The identity holds unconditionally.
 
 ## 8. How I Would Explain This in Class
 
-> "Multiplying two matrices $A$ and $B$ can be seen column by column: the first column of the product is simply $A$ times the first column of $B$, which gives $\begin{pmatrix}-1\\2\end{pmatrix}$, and the second column is $A$ times the second column of $B$, giving $\begin{pmatrix}2\\1\end{pmatrix}$. Placing them together gives the complete product matrix $AB = \begin{pmatrix}-1 & 2 \\ 2 & 1\end{pmatrix}$. This shows that matrix multiplication is just transforming multiple vectors at the same time."
+> "Multiplying two matrices $A$ and $B$ can be seen column by column: the first column of the product is simply $A$ times the first column of $B$, which gives $(-1, 2)^T$, and the second column is $A$ times the second column of $B$, giving $(2, 1)^T$. Placing them together gives the complete product matrix $AB$ with rows $(-1, 2)$ and $(2, 1)$. This shows that matrix multiplication is just transforming multiple vectors at the same time."

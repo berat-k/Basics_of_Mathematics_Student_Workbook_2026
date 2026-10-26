@@ -5,7 +5,7 @@
 Given
 
 $$
-A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix}, \quad C = \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix}
+A = \begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\\\ -1 & 3 \end{pmatrix}, \quad C = \begin{pmatrix} 2 & 1 \\\\ 0 & -1 \end{pmatrix}
 $$
 
 Compute $(AB)C$ and $A(BC)$. Compare the results and the number of intermediate operations. Explain what associativity of matrix multiplication means in this example.
@@ -62,14 +62,14 @@ Multiply $A$ ($2 \times 3$) by $B$ ($3 \times 2$):
 - **Entry (2, 2):** $0(0) + 1(1) + 1(3) = 0 + 1 + 3 = 4$
 
 $$
-AB = \begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}
+AB = \begin{pmatrix} 5 & 2 \\\\ 1 & 4 \end{pmatrix}
 $$
 
 #### Step 1B: Multiply by $C$
 Now multiply the resulting $(AB)$ ($2 \times 2$) by $C$ ($2 \times 2$):
 
 $$
-(AB)C = \begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix}
+(AB)C = \begin{pmatrix} 5 & 2 \\\\ 1 & 4 \end{pmatrix} \begin{pmatrix} 2 & 1 \\\\ 0 & -1 \end{pmatrix}
 $$
 
 - **Entry (1, 1):** $5(2) + 2(0) = 10 + 0 = 10$
@@ -78,7 +78,7 @@ $$
 - **Entry (2, 2):** $1(1) + 4(-1) = 1 - 4 = -3$
 
 $$
-(AB)C = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix}
+(AB)C = \begin{pmatrix} 10 & 3 \\\\ 2 & -3 \end{pmatrix}
 $$
 
 ---
@@ -98,14 +98,14 @@ Multiply $B$ ($3 \times 2$) by $C$ ($2 \times 2$), resulting in a $3 \times 2$ m
   - $(BC)_{32} = -1(1) + 3(-1) = -1 - 3 = -4$
 
 $$
-BC = \begin{pmatrix} 2 & 1 \\ 4 & 1 \\ -2 & -4 \end{pmatrix}
+BC = \begin{pmatrix} 2 & 1 \\\\ 4 & 1 \\\\ -2 & -4 \end{pmatrix}
 $$
 
 #### Step 2B: Multiply $A$ by $(BC)$
 Now multiply $A$ ($2 \times 3$) by $(BC)$ ($3 \times 2$):
 
 $$
-A(BC) = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 4 & 1 \\ -2 & -4 \end{pmatrix}
+A(BC) = \begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\\\ 4 & 1 \\\\ -2 & -4 \end{pmatrix}
 $$
 
 - **Entry (1, 1):** $1(2) + 2(4) + 0(-2) = 2 + 8 + 0 = 10$
@@ -114,7 +114,7 @@ $$
 - **Entry (2, 2):** $0(1) + 1(1) + 1(-4) = 0 + 1 - 4 = -3$
 
 $$
-A(BC) = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix}
+A(BC) = \begin{pmatrix} 10 & 3 \\\\ 2 & -3 \end{pmatrix}
 $$
 
 ---
@@ -151,7 +151,7 @@ Path 1 requires 20 multiplications, while Path 2 requires 24 multiplications. Co
 Check the difference:
 
 $$
-(AB)C - A(BC) = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix} - \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+(AB)C - A(BC) = \begin{pmatrix} 10 & 3 \\\\ 2 & -3 \end{pmatrix} - \begin{pmatrix} 10 & 3 \\\\ 2 & -3 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\\\ 0 & 0 \end{pmatrix}
 $$
 
 Both paths match with 100% precision.
@@ -167,4 +167,4 @@ Both paths match with 100% precision.
 
 ## 9. How I Would Explain This in Class
 
-> "Matrix multiplication is associative, meaning that grouping matrices differently as $(AB)C$ or $A(BC)$ yields the exact same final matrix, here $\begin{pmatrix}10 & 3 \\ 2 & -3\end{pmatrix}$. However, the order of calculation affects computational efficiency: computing $(AB)C$ takes 20 scalar multiplications, whereas $A(BC)$ takes 24. While the mathematical answer is identical regardless of parentheses, choosing the right path saves computational work."
+> "Matrix multiplication is associative, meaning that grouping matrices differently as $(AB)C$ or $A(BC)$ yields the exact same final matrix with rows $(10, 3)$ and $(2, -3)$. However, the order of calculation affects computational efficiency: computing $(AB)C$ takes 20 scalar multiplications, whereas $A(BC)$ takes 24. While the mathematical answer is identical regardless of parentheses, choosing the right path saves computational work."

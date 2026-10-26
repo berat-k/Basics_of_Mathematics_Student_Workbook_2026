@@ -5,7 +5,7 @@
 The matrix for a rotation through an angle $\theta$ is
 
 $$
-R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}
+R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\\\ \sin\theta & \cos\theta \end{pmatrix}
 $$
 
 Compute $R(\alpha)R(\beta)$ and, using the angle-sum formulas for sine and cosine, show that
@@ -52,7 +52,7 @@ $$
 ### Step 1: Write Down the Factor Matrices
 
 $$
-R(\alpha) = \begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix}, \qquad R(\beta) = \begin{pmatrix} \cos\beta & -\sin\beta \\ \sin\beta & \cos\beta \end{pmatrix}
+R(\alpha) = \begin{pmatrix} \cos\alpha & -\sin\alpha \\\\ \sin\alpha & \cos\alpha \end{pmatrix}, \qquad R(\beta) = \begin{pmatrix} \cos\beta & -\sin\beta \\\\ \sin\beta & \cos\beta \end{pmatrix}
 $$
 
 ### Step 2: Multiply the Matrices Entry-by-Entry
@@ -69,7 +69,7 @@ Compute the product $R(\alpha)R(\beta)$:
 Thus, the product matrix is:
 
 $$
-R(\alpha)R(\beta) = \begin{pmatrix} \cos\alpha\cos\beta - \sin\alpha\sin\beta & -(\sin\alpha\cos\beta + \cos\alpha\sin\beta) \\ \sin\alpha\cos\beta + \cos\alpha\sin\beta & \cos\alpha\cos\beta - \sin\alpha\sin\beta \end{pmatrix}
+R(\alpha)R(\beta) = \begin{pmatrix} \cos\alpha\cos\beta - \sin\alpha\sin\beta & -(\sin\alpha\cos\beta + \cos\alpha\sin\beta) \\\\ \sin\alpha\cos\beta + \cos\alpha\sin\beta & \cos\alpha\cos\beta - \sin\alpha\sin\beta \end{pmatrix}
 $$
 
 ### Step 3: Substitute the Angle-Addition Formulas
@@ -82,7 +82,7 @@ Substitute the trigonometric identities into each of the four entries:
 This gives:
 
 $$
-R(\alpha)R(\beta) = \begin{pmatrix} \cos(\alpha+\beta) & -\sin(\alpha+\beta) \\ \sin(\alpha+\beta) & \cos(\alpha+\beta) \end{pmatrix} = R(\alpha+\beta)
+R(\alpha)R(\beta) = \begin{pmatrix} \cos(\alpha+\beta) & -\sin(\alpha+\beta) \\\\ \sin(\alpha+\beta) & \cos(\alpha+\beta) \end{pmatrix} = R(\alpha+\beta)
 $$
 
 This completes the mathematical proof. $\blacksquare$
@@ -113,19 +113,19 @@ $$
 Let us verify with specific numeric angles: $\alpha = 30^\circ$, $\beta = 60^\circ \implies \alpha + \beta = 90^\circ$.
 
 $$
-R(30^\circ) = \begin{pmatrix} \frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2} \end{pmatrix}, \qquad R(60^\circ) = \begin{pmatrix} \frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & \frac{1}{2} \end{pmatrix}
+R(30^\circ) = \begin{pmatrix} \frac{\sqrt{3}}{2} & -\frac{1}{2} \\\\ \frac{1}{2} & \frac{\sqrt{3}}{2} \end{pmatrix}, \qquad R(60^\circ) = \begin{pmatrix} \frac{1}{2} & -\frac{\sqrt{3}}{2} \\\\ \frac{\sqrt{3}}{2} & \frac{1}{2} \end{pmatrix}
 $$
 
 Multiply:
 
 $$
-R(30^\circ)R(60^\circ) = \begin{pmatrix} \frac{\sqrt{3}}{4} - \frac{\sqrt{3}}{4} & -\frac{3}{4} - \frac{1}{4} \\ \frac{1}{4} + \frac{3}{4} & -\frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{4} \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+R(30^\circ)R(60^\circ) = \begin{pmatrix} \frac{\sqrt{3}}{4} - \frac{\sqrt{3}}{4} & -\frac{3}{4} - \frac{1}{4} \\\\ \frac{1}{4} + \frac{3}{4} & -\frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{4} \end{pmatrix} = \begin{pmatrix} 0 & -1 \\\\ 1 & 0 \end{pmatrix}
 $$
 
 Notice that:
 
 $$
-R(90^\circ) = \begin{pmatrix} \cos 90^\circ & -\sin 90^\circ \\ \sin 90^\circ & \cos 90^\circ \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+R(90^\circ) = \begin{pmatrix} \cos 90^\circ & -\sin 90^\circ \\\\ \sin 90^\circ & \cos 90^\circ \end{pmatrix} = \begin{pmatrix} 0 & -1 \\\\ 1 & 0 \end{pmatrix}
 $$
 
 Both results match perfectly.
