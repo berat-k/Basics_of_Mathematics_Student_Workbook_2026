@@ -5,17 +5,13 @@
 For
 
 $$
-
-A=\begin{pmatrix}2&1\\0&2\end{pmatrix}
-
+A = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}
 $$
 
 compute
 
 $$
-
-AI,\qquad IA,\qquad A+0,\qquad A^2,\qquad A^3.
-
+AI, \qquad IA, \qquad A+0, \qquad A^2, \qquad A^3.
 $$
 
 Explain the roles of the matrices $I$ and $0$, and describe the pattern you observe in successive powers of $A$.
@@ -37,12 +33,10 @@ We want to observe how special matrices—the identity matrix $I$ and zero matri
   Notice that $A$ can be split into a scalar multiple of identity and a simple shift matrix:
 
 $$
-
-A = 2I + N, \quad \text{where } N = \begin{pmatrix}0&1\\0&0\end{pmatrix}.
-
+A = 2I + N, \quad \text{where } N = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}
 $$
 
-Since $N^2 = \begin{pmatrix}0&0\\0&0\end{pmatrix} = 0$, $N$ is **nilpotent**, which will make the powers follow a very clear arithmetic-geometric pattern.
+  Since $N^2 = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = 0$, $N$ is **nilpotent**, which will make the powers follow a very clear arithmetic-geometric pattern.
 
 ---
 
@@ -51,26 +45,20 @@ Since $N^2 = \begin{pmatrix}0&0\\0&0\end{pmatrix} = 0$, $N$ is **nilpotent**, wh
 Here, $I$ and $0$ are the $2 \times 2$ matrices:
 
 $$
-
-I = \begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad 0 = \begin{pmatrix}0&0\\0&0\end{pmatrix}.
-
+I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \qquad 0 = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
 $$
 
 ### Step 1: Compute $AI$ and $IA$
 - For $AI$:
 
 $$
-
-AI = \begin{pmatrix}2&1\\0&2\end{pmatrix}\begin{pmatrix}1&0\\0&1\end{pmatrix} = \begin{pmatrix}2(1)+1(0) & 2(0)+1(1) \\ 0(1)+2(0) & 0(0)+2(1)\end{pmatrix} = \begin{pmatrix}2&1\\0&2\end{pmatrix} = A.
-
+AI = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 2(1)+1(0) & 2(0)+1(1) \\ 0(1)+2(0) & 0(0)+2(1) \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = A
 $$
 
 - For $IA$:
 
 $$
-
-IA = \begin{pmatrix}1&0\\0&1\end{pmatrix}\begin{pmatrix}2&1\\0&2\end{pmatrix} = \begin{pmatrix}1(2)+0(0) & 1(1)+0(2) \\ 0(2)+1(0) & 0(1)+1(2)\end{pmatrix} = \begin{pmatrix}2&1\\0&2\end{pmatrix} = A.
-
+IA = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 1(2)+0(0) & 1(1)+0(2) \\ 0(2)+1(0) & 0(1)+1(2) \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = A
 $$
 
 Both confirm that multiplying by $I$ leaves $A$ unchanged.
@@ -79,9 +67,7 @@ Both confirm that multiplying by $I$ leaves $A$ unchanged.
 Add corresponding entries:
 
 $$
-
-A+0 = \begin{pmatrix}2+0 & 1+0 \\ 0+0 & 2+0\end{pmatrix} = \begin{pmatrix}2&1\\0&2\end{pmatrix} = A.
-
+A+0 = \begin{pmatrix} 2+0 & 1+0 \\ 0+0 & 2+0 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = A
 $$
 
 Adding the zero matrix leaves $A$ unchanged.
@@ -90,62 +76,53 @@ Adding the zero matrix leaves $A$ unchanged.
 Multiply $A$ by itself:
 
 $$
-
-A^2 = \begin{pmatrix}2&1\\0&2\end{pmatrix}\begin{pmatrix}2&1\\0&2\end{pmatrix} = \begin{pmatrix}2(2)+1(0) & 2(1)+1(2) \\ 0(2)+2(0) & 0(1)+2(2)\end{pmatrix} = \begin{pmatrix}4 & 4 \\ 0 & 4\end{pmatrix}.
-
+A^2 = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 2(2)+1(0) & 2(1)+1(2) \\ 0(2)+2(0) & 0(1)+2(2) \end{pmatrix} = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix}
 $$
 
 ### Step 4: Compute $A^3$
 Multiply $A^2$ by $A$:
 
 $$
-
-A^3 = A^2 \cdot A = \begin{pmatrix}4&4\\0&4\end{pmatrix}\begin{pmatrix}2&1\\0&2\end{pmatrix} = \begin{pmatrix}4(2)+4(0) & 4(1)+4(2) \\ 0(2)+4(0) & 0(1)+4(2)\end{pmatrix} = \begin{pmatrix}8 & 4+8 \\ 0 & 8\end{pmatrix} = \begin{pmatrix}8 & 12 \\ 0 & 8\end{pmatrix}.
-
+A^3 = A^2 \cdot A = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 4(2)+4(0) & 4(1)+4(2) \\ 0(2)+4(0) & 0(1)+4(2) \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}
 $$
 
 ---
 
 ## 5. Final Answer & Conclusion
 
-- $AI = IA = \begin{pmatrix}2&1\\0&2\end{pmatrix} = A$
-- $A + 0 = \begin{pmatrix}2&1\\0&2\end{pmatrix} = A$
-- $A^2 = \begin{pmatrix}4&4\\0&4\end{pmatrix}$
-- $A^3 = \begin{pmatrix}8&12\\0&8\end{pmatrix}$
+- $AI = IA = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = A$
+- $A + 0 = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = A$
+- $A^2 = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix}$
+- $A^3 = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}$
 - **Roles of $I$ and $0$:**
   - $I$ acts as the multiplicative identity: it preserves any matrix under multiplication from either left or right.
   - $0$ acts as the additive identity: it preserves any matrix under addition.
 - **Pattern in Powers ($A^n$):**
   Comparing the powers:
-  - $A^1 = \begin{pmatrix}2^1 & 1 \\ cdot 2^0 \\ 0 & 2^1\end{pmatrix} = \begin{pmatrix}2&1\\0&2\end{pmatrix}$
-  - $A^2 = \begin{pmatrix}2^2 & 2 \\ cdot 2^1 \\ 0 & 2^2\end{pmatrix} = \begin{pmatrix}4&4\\0&4\end{pmatrix}$
-  - $A^3 = \begin{pmatrix}2^3 & 3 \\ cdot 2^2 \\ 0 & 2^3\end{pmatrix} = \begin{pmatrix}8&12\\0&8\end{pmatrix}$
+  - $A^1 = \begin{pmatrix} 2^1 & 1 \cdot 2^0 \\ 0 & 2^1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$
+  - $A^2 = \begin{pmatrix} 2^2 & 2 \cdot 2^1 \\ 0 & 2^2 \end{pmatrix} = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix}$
+  - $A^3 = \begin{pmatrix} 2^3 & 3 \cdot 2^2 \\ 0 & 2^3 \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}$
+
   In general, for any integer $n \ge 1$:
 
 $$
-
-A^n = \begin{pmatrix}2^n & n 2^{n-1} \\ 0 & 2^n\end{pmatrix}.
-
+A^n = \begin{pmatrix} 2^n & n 2^{n-1} \\ 0 & 2^n \end{pmatrix}
 $$
 
 ---
 
 ## 6. Quick Verification
 
-Using the binomial expansion since $2I$ and $N = \begin{pmatrix}0&1\\0&0\end{pmatrix}$ commute and $N^2 = 0$:
+Using the binomial expansion since $2I$ and $N = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ commute and $N^2 = 0$:
 
 $$
-
-A^n = (2I + N)^n = (2I)^n + \binom{n}{1}(2I)^{n-1}N + 0 = 2^n I + n 2^{n-1} N = \begin{pmatrix}2^n & n 2^{n-1} \\ 0 & 2^n\end{pmatrix}.
-
+A^n = (2I + N)^n = (2I)^n + \binom{n}{1}(2I)^{n-1}N + 0 = 2^n I + n 2^{n-1} N = \begin{pmatrix} 2^n & n 2^{n-1} \\ 0 & 2^n \end{pmatrix}
 $$
 
 For $n = 3$:
 
 $$
-
-\begin{pmatrix}2^3 & 3 \\ cdot 2^2 \\ 0 & 2^3\end{pmatrix} = \begin{pmatrix}8 & 12 \\ 0 & 8\end{pmatrix}.
-
+\begin{pmatrix} 2^3 & 3 \cdot 2^2 \\ 0 & 2^3 \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}
 $$
 
 This matches our computed $A^3$ exactly.

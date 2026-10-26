@@ -5,9 +5,7 @@
 Given
 
 $$
-
-A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad B=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
-
+A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \qquad B = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
 $$
 
 Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form of all such matrices $B$.
@@ -35,53 +33,26 @@ Although matrix multiplication is generally noncommutative, some specific pairs 
 Multiply $A$ by $B$:
 
 $$
-
-AB = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}a&b\\c&d\end{pmatrix} = \begin{pmatrix}1\\ cdot a + 1\\ cdot c & 1\\ cdot b + 1\\ cdot d \\ 0\\ cdot a + 1\\ cdot c & 0\\ cdot b + 1\\ cdot d\end{pmatrix} = \begin{pmatrix}a+c & b+d \\ c & d\end{pmatrix}.
-
+AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} 1\cdot a + 1\cdot c & 1\cdot b + 1\cdot d \\ 0\cdot a + 1\cdot c & 0\cdot b + 1\cdot d \end{pmatrix} = \begin{pmatrix} a+c & b+d \\ c & d \end{pmatrix}
 $$
 
 ### Step 2: Compute $BA$
 Multiply $B$ by $A$:
 
 $$
-
-BA = \begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix} = \begin{pmatrix}a\\ cdot 1 + b\\ cdot 0 & a\\ cdot 1 + b\\ cdot 1 \\ c\\ cdot 1 + d\\ cdot 0 & c\\ cdot 1 + d\\ cdot 1\end{pmatrix} = \begin{pmatrix}a & a+b \\ c & c+d\end{pmatrix}.
-
+BA = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a\cdot 1 + b\cdot 0 & a\cdot 1 + b\cdot 1 \\ c\cdot 1 + d\cdot 0 & c\cdot 1 + d\cdot 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\ c & c+d \end{pmatrix}
 $$
 
 ### Step 3: Set $AB = BA$ and Equate Entries
 For the two matrices to be equal, each corresponding entry must match:
 1. **Entry (1, 1):**
-
-$$
-
-a + c = a \implies c = 0.
-
-$$
-
+   $$a + c = a \implies c = 0$$
 2. **Entry (2, 1):**
-
-$$
-
-c = c \implies 0 = 0 \quad (\text{holds automatically when } c = 0).
-
-$$
-
+   $$c = c \implies 0 = 0 \quad (\text{holds automatically when } c = 0)$$
 3. **Entry (2, 2):**
-
-$$
-
-d = c + d \implies c = 0 \quad (\text{consistent with Entry (1, 1)}).
-
-$$
-
+   $$d = c + d \implies c = 0 \quad (\text{consistent with Entry (1, 1)})$$
 4. **Entry (1, 2):**
-
-$$
-
-b + d = a + b \implies d = a.
-
-$$
+   $$b + d = a + b \implies d = a$$
 
 ### Step 4: Interpret the Free Parameters
 - $c$ must be $0$.
@@ -95,50 +66,40 @@ $$
 - **Conditions on the entries:**
 
 $$
-
 c = 0 \quad \text{and} \quad d = a
-
 $$
 
-with $a$ and $b$ being completely arbitrary real numbers.
+  with $a$ and $b$ being completely arbitrary real numbers.
 - **General form of matrix $B$:**
 
 $$
-
-B = \begin{pmatrix}a & b \\ 0 & a\end{pmatrix}.
-
+B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix}
 $$
 
 - **Structural meaning:**
   All commuting matrices are upper triangular with equal diagonal entries. We can write $B$ as:
 
 $$
-
-B = a \begin{pmatrix}1&0\\0&1\end{pmatrix} + b \begin{pmatrix}0&1\\0&0\end{pmatrix} = a I + b(A - I) = (a - b)I + bA.
-
+B = a \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + b \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = a I + b(A - I) = (a - b)I + bA
 $$
 
-Thus, every matrix that commutes with $A$ is an affine combination (a polynomial) of $A$ and the identity matrix $I$.
+  Thus, every matrix that commutes with $A$ is an affine combination (a polynomial) of $A$ and the identity matrix $I$.
 
 ---
 
 ## 6. Quick Verification
 
-Substitute $B = \begin{pmatrix}a & b \\ 0 & a\end{pmatrix}$ back into both products:
+Substitute $B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix}$ back into both products:
 
 $$
-
-AB = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}a&b\\0&a\end{pmatrix} = \begin{pmatrix}a & a+b \\ 0 & a\end{pmatrix},
-
+AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
 $$
 
 $$
-
-BA = \begin{pmatrix}a&b\\0&a\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix} = \begin{pmatrix}a & a+b \\ 0 & a\end{pmatrix}.
-
+BA = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
 $$
 
-Since $AB - BA = \begin{pmatrix}0&0\\0&0\end{pmatrix}$, $AB = BA$ holds for all $a, b \in \mathbb{R}$.
+Since $AB - BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$, $AB = BA$ holds for all $a, b \in \mathbb{R}$.
 
 ---
 
