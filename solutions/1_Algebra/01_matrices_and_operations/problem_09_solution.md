@@ -3,10 +3,18 @@
 ## 1. The Original Problem
 
 Let
-$$S=\begin{pmatrix}2&0\\0&1\end{pmatrix},\qquad R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}.$$
+$$
+
+S=\begin{pmatrix}2&0\\0&1\end{pmatrix},\qquad R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}.
+$$
+
 The matrix $S$ describes nonuniform scaling, while $R$ describes a $90^\circ$ counterclockwise rotation.
 For
-$$x=\begin{pmatrix}1\\2\end{pmatrix}$$
+$$
+
+x=\begin{pmatrix}1\\2\end{pmatrix}
+$$
+
 compute $RSx$ and $SRx$. Compare the results and explain geometrically why the order of these transformations matters.
 
 ---
@@ -24,7 +32,11 @@ We will compare the resulting vectors and explain why their order matters from a
 
 - **Matrix Composition from Right to Left:**
   In the product $M_2 M_1 x$, the matrix closest to $x$ ($M_1$) acts first, and the outer matrix ($M_2$) acts second:
-  $$M_2 M_1 x = M_2 (M_1 x).$$
+$$
+
+M_2 M_1 x = M_2 (M_1 x).
+$$
+
 - **Geometric Roles of $S$ and $R$:**
   - $S = \begin{pmatrix}2&0\\0&1\end{pmatrix}$ doubles the horizontal $x$-coordinate while leaving the vertical $y$-coordinate unchanged: $(x, y) \mapsto (2x, y)$.
   - $R = \begin{pmatrix}0&-1\\1&0\end{pmatrix}$ rotates vectors $90^\circ$ counterclockwise: $(x, y) \mapsto (-y, x)$.
@@ -35,19 +47,36 @@ We will compare the resulting vectors and explain why their order matters from a
 
 ### Step 1: Compute $RSx$ (Scale first, then Rotate)
 1. **Apply scaling $S$ to $x = \begin{pmatrix}1\\2\end{pmatrix}$:**
-   $$Sx = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}2(1)+0(2) \\ 0(1)+1(2)\end{pmatrix} = \begin{pmatrix}2\\2\end{pmatrix}.$$
+$$
+
+Sx = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}2(1)+0(2) \\ 0(1)+1(2)\end{pmatrix} = \begin{pmatrix}2\\2\end{pmatrix}.
+$$
+
 2. **Apply rotation $R$ to the scaled vector $\begin{pmatrix}2\\2\end{pmatrix}$:**
-   $$RSx = R(Sx) = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}2\\2\end{pmatrix} = \begin{pmatrix}0(2)+(-1)(2) \\ 1(2)+0(2)\end{pmatrix} = \begin{pmatrix}-2\\2\end{pmatrix}.$$
+$$
+
+RSx = R(Sx) = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}2\\2\end{pmatrix} = \begin{pmatrix}0(2)+(-1)(2) \\ 1(2)+0(2)\end{pmatrix} = \begin{pmatrix}-2\\2\end{pmatrix}.
+$$
 
 ### Step 2: Compute $SRx$ (Rotate first, then Scale)
 1. **Apply rotation $R$ to $x = \begin{pmatrix}1\\2\end{pmatrix}$:**
-   $$Rx = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}0(1)+(-1)(2) \\ 1(1)+0(2)\end{pmatrix} = \begin{pmatrix}-2\\1\end{pmatrix}.$$
+$$
+
+Rx = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}0(1)+(-1)(2) \\ 1(1)+0(2)\end{pmatrix} = \begin{pmatrix}-2\\1\end{pmatrix}.
+$$
+
 2. **Apply scaling $S$ to the rotated vector $\begin{pmatrix}-2\\1\end{pmatrix}$:**
-   $$SRx = S(Rx) = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}-2\\1\end{pmatrix} = \begin{pmatrix}2(-2)+0(1) \\ 0(-2)+1(1)\end{pmatrix} = \begin{pmatrix}-4\\1\end{pmatrix}.$$
+$$
+
+SRx = S(Rx) = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}-2\\1\end{pmatrix} = \begin{pmatrix}2(-2)+0(1) \\ 0(-2)+1(1)\end{pmatrix} = \begin{pmatrix}-4\\1\end{pmatrix}.
+$$
 
 ### Step 3: Compare the Results
 Comparing the two vectors:
-$$RSx = \begin{pmatrix}-2\\2\end{pmatrix} \neq \begin{pmatrix}-4\\1\end{pmatrix} = SRx.$$
+$$
+
+RSx = \begin{pmatrix}-2\\2\end{pmatrix} \neq \begin{pmatrix}-4\\1\end{pmatrix} = SRx.
+$$
 
 ---
 
@@ -65,8 +94,16 @@ $$RSx = \begin{pmatrix}-2\\2\end{pmatrix} \neq \begin{pmatrix}-4\\1\end{pmatrix}
 ## 6. Quick Verification
 
 We can multiply the composite transformation matrices directly:
-$$RS = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}2&0\\0&1\end{pmatrix} = \begin{pmatrix}0&-1\\2&0\end{pmatrix} \implies (RS)x = \begin{pmatrix}0&-1\\2&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}-2\\2\end{pmatrix}.$$
-$$SR = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}0&-1\\1&0\end{pmatrix} = \begin{pmatrix}0&-2\\1&0\end{pmatrix} \implies (SR)x = \begin{pmatrix}0&-2\\1&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}-4\\1\end{pmatrix}.$$
+$$
+
+RS = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}2&0\\0&1\end{pmatrix} = \begin{pmatrix}0&-1\\2&0\end{pmatrix} \implies (RS)x = \begin{pmatrix}0&-1\\2&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}-2\\2\end{pmatrix}.
+
+$$
+$$
+
+SR = \begin{pmatrix}2&0\\0&1\end{pmatrix}\begin{pmatrix}0&-1\\1&0\end{pmatrix} = \begin{pmatrix}0&-2\\1&0\end{pmatrix} \implies (SR)x = \begin{pmatrix}0&-2\\1&0\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix} = \begin{pmatrix}-4\\1\end{pmatrix}.
+$$
+
 Both matrix-first and vector-first evaluations match identically.
 
 ---

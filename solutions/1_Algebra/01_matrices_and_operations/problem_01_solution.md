@@ -1,9 +1,10 @@
 
 
 Given matrices:
+$$
 
-
-$$A = \begin{pmatrix} 2 & -1 & 3 \\ 0 & 4 & 5 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 0 \\ -2 & 3 \\ 4 & 1 \end{pmatrix}$$
+A = \begin{pmatrix} 2 & -1 & 3 \\ 0 & 4 & 5 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 0 \\ -2 & 3 \\ 4 & 1 \end{pmatrix}
+$$
 
 ---
 
@@ -37,11 +38,14 @@ $$A = \begin{pmatrix} 2 & -1 & 3 \\ 0 & 4 & 5 \end{pmatrix}, \qquad B = \begin{p
 ### **3. Write the second row of $A$ and the first column of $B$ as vectors**
 
 * **The second row of $A$ (as a row vector):**
+$$
 
-$$\mathbf{r}_2 = \begin{pmatrix} 0 & 4 & 5 \end{pmatrix} \quad \text{or} \quad [0, 4, 5]$$
-
-
+\mathbf{r}_2 = \begin{pmatrix} 0 & 4 & 5 \end{pmatrix} \quad \text{or} \quad [0, 4, 5]
+$$
 
 * **The first column of $B$ (as a column vector):**
+$$
 
-$$\mathbf{c}_1 = \begin{pmatrix} 1 \\ -2 \\ 4 \end{pmatrix}$$
+\mathbf{c}_1 = \begin{pmatrix} 1 \\ -2 \\ 4 \end{pmatrix}
+
+$$
