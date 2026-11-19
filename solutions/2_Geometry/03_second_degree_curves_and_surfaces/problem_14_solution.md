@@ -38,9 +38,11 @@ We need to:
   When a spatial variable (such as $z$) is completely missing from an equation $F(x, y) = 0$, the constraint applies identically to every horizontal plane $z = c$. The 2D curve in the $xy$-plane is simply translated along the $z$-axis to form a **cylinder** whose generating lines (rulings) are parallel to the missing axis ($Oz$).
 - **Homogeneous Quadratic Equations:**
   The equation $x^2 + y^2 - z^2 = 0$ is homogeneous of degree 2: if $(x, y, z)$ is on the surface, then for any scalar $k \in \mathbb{R}$, $(kx, ky, kz)$ also satisfies the equation:
-  $$
-  (kx)^2 + (ky)^2 - (kz)^2 = k^2(x^2 + y^2 - z^2) = 0.
-  $$
+
+$$
+(kx)^2 + (ky)^2 - (kz)^2 = k^2(x^2 + y^2 - z^2) = 0.
+$$
+
   Geometrically, this means the surface is formed by straight lines passing through the origin: it is a **cone** with vertex at $(0, 0, 0)$.
 - **Radius as a Function of Height:**
   - In $S_1$, $x^2 + y^2 = z^2$ explicitly ties the sum of squares $x^2 + y^2$ to the square of height $z^2$. Slicing at $z = c$ yields $x^2 + y^2 = c^2$, so the radius is $R(c) = |c|$, which scales linearly with $|c|$.
@@ -61,17 +63,21 @@ $$
 
 - **For $c \ne 0$:**
   This is a **circle** in the horizontal plane $z = c$, centered at $(0, 0, c)$ with radius:
-  $$
-  R_1(c) = \sqrt{c^2} = |c|
-  $$
+
+$$
+R_1(c) = \sqrt{c^2} = |c|
+$$
+
   The radius expands linearly as we move away from the $xy$-plane in either vertical direction:
   - At $z = 1$: circle of radius $1$.
   - At $z = 2$: circle of radius $2$.
   - At $z = -3$: circle of radius $3$.
 - **For $c = 0$ ($xy$-plane):**
-  $$
-  x^2 + y^2 = 0 \implies x = 0, \quad y = 0
-  $$
+
+$$
+x^2 + y^2 = 0 \implies x = 0, \quad y = 0
+$$
+
   The cross-section collapses to the single point $(0, 0, 0)$, which is the **apex (vertex)** of the cone.
 
 #### 2. Vertical Cross-Section $x = 0$ ($yz$-plane):
@@ -119,9 +125,11 @@ x^2 + y^2 = 4
 $$
 
 - **Description:** For **every** value of $c \in \mathbb{R}$, this is a **circle** in the horizontal plane $z = c$, centered at $(0, 0, c)$ with constant radius:
-  $$
-  R_2(c) = \sqrt{4} = 2
-  $$
+
+$$
+R_2(c) = \sqrt{4} = 2
+$$
+
   The cross-section is identical at all heights:
   - At $z = 0$: circle of radius $2$.
   - At $z = 5$: circle of radius $2$.
@@ -135,9 +143,10 @@ $$
 $$
 
 - **Description:** A **pair of parallel vertical lines** in the $yz$-plane, parallel to the $z$-axis:
-  $$
-  \text{Line 1: } (0, 2, z), \quad \text{Line 2: } (0, -2, z) \quad \text{for } z \in \mathbb{R}.
-  $$
+
+$$
+\text{Line 1: } (0, 2, z), \quad \text{Line 2: } (0, -2, z) \quad \text{for } z \in \mathbb{R}.
+$$
 
 #### 3. Vertical Cross-Section $y = 0$ ($xz$-plane):
 Substitute $y = 0$:
@@ -147,9 +156,10 @@ x^2 + 0^2 = 4 \implies x^2 = 4 \implies x = 2 \quad \text{or} \quad x = -2
 $$
 
 - **Description:** A **pair of parallel vertical lines** in the $xz$-plane, parallel to the $z$-axis:
-  $$
-  \text{Line 1: } (2, 0, z), \quad \text{Line 2: } (-2, 0, z) \quad \text{for } z \in \mathbb{R}.
-  $$
+
+$$
+\text{Line 1: } (2, 0, z), \quad \text{Line 2: } (-2, 0, z) \quad \text{for } z \in \mathbb{R}.
+$$
 
 #### Identification:
 Surface 2 is a **right circular cylinder** with vertical axis along $Oz$ and fixed radius $R = 2$. It extends infinitely in both vertical directions without widening or tapering.

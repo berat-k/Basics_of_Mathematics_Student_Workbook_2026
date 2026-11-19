@@ -29,16 +29,20 @@ We need to:
 - **Rotational Symmetry Around $Oz$:**
   Since the horizontal cross-sections at $z > 0$ are circles centered on the $z$-axis, the surface must have rotational symmetry about the $z$-axis ($Oz$).
   Any surface of revolution around the $z$-axis can be written as:
-  $$
-  z = g(r) \quad \text{or} \quad r^2 = h(z)
-  $$
+
+$$
+z = g(r) \quad \text{or} \quad r^2 = h(z)
+$$
+
   where $r = \sqrt{x^2 + y^2}$ is the radial distance from the $z$-axis.
 - **Vertical Cross-Sections as Parabolas:**
   A vertical plane passing through $Oz$ has the general equation $y = mx$ (or $x = 0$). In such a plane, the radial coordinate is $r = \sqrt{x^2 + y^2}$.
   The requirement that the curve in any such vertical plane is a parabola with its vertex at the origin means the vertical profile must satisfy:
-  $$
-  z = a r^2 = a (x^2 + y^2) \quad \text{with } a > 0.
-  $$
+
+$$
+z = a r^2 = a (x^2 + y^2) \quad \text{with } a > 0.
+$$
+
 - **Checking All Three Properties:**
   1. At $z = 0$: $a(x^2 + y^2) = 0 \implies (x, y) = (0, 0)$, a single point.
   2. At $z = c > 0$: $x^2 + y^2 = c/a$, a circle of radius $R(c) = \sqrt{c/a}$, which strictly increases with $c$.
@@ -109,9 +113,11 @@ $$
 To verify that the radius increases with $z$:
 - For $c_1 < c_2$, we have $\sqrt{c_1} < \sqrt{c_2}$, so $R(c_1) < R(c_2)$.
 - The derivative with respect to $c$ is:
-  $$
-  \frac{dR}{dc} = \frac{1}{2\sqrt{c}} > 0 \quad \text{for all } c > 0.
-  $$
+
+$$
+\frac{dR}{dc} = \frac{1}{2\sqrt{c}} > 0 \quad \text{for all } c > 0.
+$$
+
 As $c$ increases, the radius $R(c)$ increases strictly monotonically. This completely satisfies Property 2.
 
 ---
@@ -126,28 +132,36 @@ Let us analyze both:
 
 1. **For $x = 0$ ($yz$-plane):**
    Substitute $x = 0$ into $z = x^2 + y^2$:
-   $$
-   z = 0^2 + y^2 \implies z = y^2
-   $$
+
+$$
+z = 0^2 + y^2 \implies z = y^2
+$$
+
    This is an upward-opening **parabola** in the plane $x = 0$, with vertex at $(0, 0, 0)$ and vertical axis along $Oz$.
 
 2. **For $y = 0$ ($xz$-plane):**
    Substitute $y = 0$ into $z = x^2 + y^2$:
-   $$
-   z = x^2 + 0^2 \implies z = x^2
-   $$
+
+$$
+z = x^2 + 0^2 \implies z = x^2
+$$
+
    This is an identical upward-opening **parabola** in the plane $y = 0$.
 
 3. **For an arbitrary vertical plane $y = mx$ passing through $Oz$:**
    Substitute $y = mx$ into $z = x^2 + y^2$:
-   $$
-   z = x^2 + (mx)^2 = (1 + m^2) x^2
-   $$
+
+$$
+z = x^2 + (mx)^2 = (1 + m^2) x^2
+$$
+
    Within this plane, let $u$ be the horizontal coordinate measured along the line of intersection with the $xy$-plane: $u = \pm \sqrt{x^2 + y^2} = \pm \sqrt{1 + m^2}\, x$.
    Then:
-   $$
-   z = u^2
-   $$
+
+$$
+z = u^2
+$$
+
    This is a standard upward-opening **parabola** with vertex at the origin $(0, 0, 0)$ and vertical axis along $Oz$.
 
 Because this holds for every vertical plane containing the $z$-axis, Property 3 is fully satisfied.

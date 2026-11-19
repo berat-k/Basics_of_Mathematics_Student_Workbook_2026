@@ -74,31 +74,38 @@ $$
 Let us evaluate $R_1(c)$ for several representative values of $c$:
 
 1. **At $c = 0$ (the waist / $xy$-plane):**
-   $$
-   x^2 + y^2 = 1 + 0^2 = 1 \implies R_1(0) = \sqrt{1} = 1
-   $$
+
+$$
+x^2 + y^2 = 1 + 0^2 = 1 \implies R_1(0) = \sqrt{1} = 1
+$$
+
    The slice is a circle of radius $1$. This is the **narrowest point (waist)** of the entire surface.
 
 2. **At $c = \pm 0.5$:**
-   $$
-   x^2 + y^2 = 1 + (0.5)^2 = 1 + 0.25 = 1.25 \implies R_1(\pm 0.5) = \sqrt{1.25} \approx 1.118
-   $$
+
+$$
+x^2 + y^2 = 1 + (0.5)^2 = 1 + 0.25 = 1.25 \implies R_1(\pm 0.5) = \sqrt{1.25} \approx 1.118
+$$
+
    The cross-section is a circle with radius slightly larger than $1$.
 
 3. **At $c = \pm 1$:**
-   $$
-   x^2 + y^2 = 1 + (\pm 1)^2 = 2 \implies R_1(\pm 1) = \sqrt{2} \approx 1.414
-   $$
+
+$$
+x^2 + y^2 = 1 + (\pm 1)^2 = 2 \implies R_1(\pm 1) = \sqrt{2} \approx 1.414
+$$
 
 4. **At $c = \pm 2$:**
-   $$
-   x^2 + y^2 = 1 + (\pm 2)^2 = 5 \implies R_1(\pm 2) = \sqrt{5} \approx 2.236
-   $$
+
+$$
+x^2 + y^2 = 1 + (\pm 2)^2 = 5 \implies R_1(\pm 2) = \sqrt{5} \approx 2.236
+$$
 
 5. **At $c = \pm 3$:**
-   $$
-   x^2 + y^2 = 1 + (\pm 3)^2 = 10 \implies R_1(\pm 3) = \sqrt{10} \approx 3.162
-   $$
+
+$$
+x^2 + y^2 = 1 + (\pm 3)^2 = 10 \implies R_1(\pm 3) = \sqrt{10} \approx 3.162
+$$
 
 As $|c| \to \infty$, the radius $R_1(c) \approx |c|$ grows without bound. The surface is smooth, connected, and has no gaps. It is known as a **hyperboloid of one sheet** (or one-sheeted hyperboloid).
 
@@ -121,33 +128,43 @@ $$
 Let us evaluate this for the same values of $c$:
 
 1. **At $c = 0$ ($xy$-plane):**
-   $$
-   x^2 + y^2 = 0^2 - 1 = -1 < 0
-   $$
+
+$$
+x^2 + y^2 = 0^2 - 1 = -1 < 0
+$$
+
    The sum of two squares cannot equal $-1$ in real numbers. **The cross-section does not exist (empty set $\emptyset$).**
 
 2. **At $c = \pm 0.5$:**
-   $$
-   x^2 + y^2 = (0.5)^2 - 1 = 0.25 - 1 = -0.75 < 0
-   $$
+
+$$
+x^2 + y^2 = (0.5)^2 - 1 = 0.25 - 1 = -0.75 < 0
+$$
+
    **The cross-section does not exist (empty set $\emptyset$).**
 
 3. **At $c = \pm 1$ (the vertices):**
-   $$
-   x^2 + y^2 = (\pm 1)^2 - 1 = 0 \implies x = 0, \quad y = 0
-   $$
+
+$$
+x^2 + y^2 = (\pm 1)^2 - 1 = 0 \implies x = 0, \quad y = 0
+$$
+
    The cross-sections are single points: $(0, 0, 1)$ on the upper sheet, and $(0, 0, -1)$ on the lower sheet. The radius is $R_2(\pm 1) = 0$.
 
 4. **At $c = \pm 2$:**
-   $$
-   x^2 + y^2 = (\pm 2)^2 - 1 = 4 - 1 = 3 \implies R_2(\pm 2) = \sqrt{3} \approx 1.732
-   $$
+
+$$
+x^2 + y^2 = (\pm 2)^2 - 1 = 4 - 1 = 3 \implies R_2(\pm 2) = \sqrt{3} \approx 1.732
+$$
+
    The cross-sections are circles of radius $\sqrt{3}$.
 
 5. **At $c = \pm 3$:**
-   $$
-   x^2 + y^2 = (\pm 3)^2 - 1 = 9 - 1 = 8 \implies R_2(\pm 3) = \sqrt{8} = 2\sqrt{2} \approx 2.828
-   $$
+
+$$
+x^2 + y^2 = (\pm 3)^2 - 1 = 9 - 1 = 8 \implies R_2(\pm 3) = \sqrt{8} = 2\sqrt{2} \approx 2.828
+$$
+
    The cross-sections are circles of radius $2\sqrt{2}$.
 
 For any height $-1 < c < 1$, no points of the surface exist. The surface is divided into two separate, non-connecting sheets:
@@ -223,13 +240,17 @@ This surface is known as a **hyperboloid of two sheets** (or two-sheeted hyperbo
 
 2. **Asymptotic Cone:**
    Both surfaces share the same asymptotic cone:
-   $$
-   x^2 + y^2 - z^2 = 0 \implies x^2 + y^2 = z^2.
-   $$
+
+$$
+x^2 + y^2 - z^2 = 0 \implies x^2 + y^2 = z^2.
+$$
+
    For large $|c|$, both $R_1(c) = \sqrt{c^2 + 1}$ and $R_2(c) = \sqrt{c^2 - 1}$ approach the cone's radius $R_{\text{cone}}(c) = |c|$:
-   $$
-   \lim_{|c| \to \infty} (\sqrt{c^2 + 1} - |c|) = 0, \quad \lim_{|c| \to \infty} (|c| - \sqrt{c^2 - 1}) = 0.
-   $$
+
+$$
+\lim_{|c| \to \infty} (\sqrt{c^2 + 1} - |c|) = 0, \quad \lim_{|c| \to \infty} (|c| - \sqrt{c^2 - 1}) = 0.
+$$
+
    This verifies that both surfaces asymptotically approach the same circular cone from opposite sides.
 
 ---

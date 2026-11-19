@@ -39,14 +39,18 @@ We need to:
   - The vector $\vec{CP}$ has length $r$ (the cross-sectional radius).
   - The vector $\vec{OP}$ has length $R = 5$ (the sphere radius).
   Because $\vec{OC} \perp \vec{CP}$, by the Pythagorean theorem:
-  $$
-  r^2 + c^2 = R^2 \implies r^2 + c^2 = 25 \implies r = \sqrt{25 - c^2}.
-  $$
+
+$$
+r^2 + c^2 = R^2 \implies r^2 + c^2 = 25 \implies r = \sqrt{25 - c^2}.
+$$
+
 - **Algebraic Interpretation:**
   Substituting $z = c$ directly into $x^2 + y^2 + z^2 = 25$ yields:
-  $$
-  x^2 + y^2 = 25 - c^2.
-  $$
+
+$$
+x^2 + y^2 = 25 - c^2.
+$$
+
   The nature of the solution set depends entirely on the sign of $25 - c^2$:
   - $25 - c^2 > 0 \iff |c| < 5$: a circle of radius $r(c) = \sqrt{25 - c^2}$.
   - $25 - c^2 = 0 \iff |c| = 5$: a single point (radius $0$).
@@ -75,29 +79,36 @@ $$
 - In the plane $z = 3$, the equation $x^2 + y^2 = 16 = 4^2$ represents a **circle**.
 - **Center of the circle:**
   The center lies on the $z$-axis at $x = 0, y = 0, z = 3$, which is the point:
-  $$
-  C(0, 0, 3)
-  $$
+
+$$
+C(0, 0, 3)
+$$
+
 - **Radius of the circle:**
-  $$
-  r = \sqrt{16} = 4
-  $$
+
+$$
+r = \sqrt{16} = 4
+$$
+
 - **Full 3D specification of the curve:**
   In 3D space, a curve is defined as the intersection of two surfaces:
-  $$
-  \begin{cases}
+
+$$
+\begin{cases}
   x^2 + y^2 = 16 \\\\
   z = 3
   \end{cases}
-  $$
+$$
+
   Or in parametric form with parameter $\theta \in [0, 2\pi)$:
-  $$
-  \begin{cases}
+
+$$
+\begin{cases}
   x = 4 \cos\theta \\\\
   y = 4 \sin\theta \\\\
   z = 3
   \end{cases}
-  $$
+$$
 
 ---
 
@@ -122,9 +133,11 @@ Here $c^2 < 25$, so $25 - c^2 > 0$.
 - The intersection is a non-degenerate **circle** lying in the horizontal plane $z = c$.
 - **Center:** $C(0, 0, c)$ on the vertical axis.
 - **Radius:**
-  $$
-  r(c) = \sqrt{25 - c^2}
-  $$
+
+$$
+r(c) = \sqrt{25 - c^2}
+$$
+
 - **Notable values:**
   - At the equator ($c = 0$): $r(0) = \sqrt{25} = 5$ (the great circle / maximum possible cross-section).
   - At $c = \pm 3$: $r(\pm 3) = \sqrt{25 - 9} = \sqrt{16} = 4$.
@@ -179,9 +192,11 @@ Since the sum of two real squares $x^2 + y^2 \ge 0$ cannot be negative, there ar
 1. **Pythagorean 3-4-5 Triangle:**
    At $z = 3$, the vertical distance from the origin is $d = 3$. The sphere's radius is $R = 5$.
    By the classic 3-4-5 right triangle:
-   $$
-   d^2 + r^2 = R^2 \implies 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
-   $$
+
+$$
+d^2 + r^2 = R^2 \implies 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+$$
+
    This immediately confirms $r = 4$.
 
 2. **Equatorial Extreme:**

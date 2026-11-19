@@ -40,9 +40,11 @@ We need to:
 - **Completing the Square for 2D Conics:**
   A quadratic form $A x^2 + C y^2 + D x + E y + F = 0$ without a mixed term $xy$ represents a conic aligned with the coordinate axes.
   Grouping terms:
-  $$
-  A\left(x^2 + \frac{D}{A}x\right) + C\left(y^2 + \frac{E}{C}y\right) = -F.
-  $$
+
+$$
+A\left(x^2 + \frac{D}{A}x\right) + C\left(y^2 + \frac{E}{C}y\right) = -F.
+$$
+
   Completing squares reveals the translation vector $(x_0, y_0)$. If both leading coefficients $A, C > 0$ and the resulting right-hand side is positive, the curve is an **ellipse**.
 - **Trace-First 3D Surface Analysis:**
   Instead of memorizing names, examine how the object looks from three orthogonal perspectives:
@@ -112,42 +114,56 @@ $$
 This is the canonical equation of a translated **ellipse** with horizontal major axis ($a > b$):
 
 1. **Center:**
-   $$
-   S(x_0, y_0) = (1, -2)
-   $$
+
+$$
+S(x_0, y_0) = (1, -2)
+$$
+
 2. **Semiaxes:**
    - Horizontal semimajor axis: $a = 3$ (along line $y = -2$)
    - Vertical semiminor axis: $b = 2$ (along line $x = 1$)
 3. **Vertices (Endpoints of the Major Axis):**
-   $$
-   A_1(x_0 - a, y_0) = (1 - 3, -2) = (-2, -2)
-   $$
-   $$
-   A_2(x_0 + a, y_0) = (1 + 3, -2) = (4, -2)
-   $$
+
+$$
+A_1(x_0 - a, y_0) = (1 - 3, -2) = (-2, -2)
+$$
+
+$$
+A_2(x_0 + a, y_0) = (1 + 3, -2) = (4, -2)
+$$
+
 4. **Co-vertices (Endpoints of the Minor Axis):**
-   $$
-   B_1(x_0, y_0 - b) = (1, -2 - 2) = (1, -4)
-   $$
-   $$
-   B_2(x_0, y_0 + b) = (1, -2 + 2) = (1, 0)
-   $$
+
+$$
+B_1(x_0, y_0 - b) = (1, -2 - 2) = (1, -4)
+$$
+
+$$
+B_2(x_0, y_0 + b) = (1, -2 + 2) = (1, 0)
+$$
+
 5. **Linear Eccentricity ($c_{\text{focal}}$):**
-   $$
-   c = \sqrt{a^2 - b^2} = \sqrt{9 - 4} = \sqrt{5} \approx 2.236
-   $$
+
+$$
+c = \sqrt{a^2 - b^2} = \sqrt{9 - 4} = \sqrt{5} \approx 2.236
+$$
+
 6. **Foci:**
    Located at $(x_0 \pm c, y_0)$ along the horizontal major axis:
-   $$
-   F_1(1 - \sqrt{5}, -2) \approx (-1.236, -2)
-   $$
-   $$
-   F_2(1 + \sqrt{5}, -2) \approx (3.236, -2)
-   $$
+
+$$
+F_1(1 - \sqrt{5}, -2) \approx (-1.236, -2)
+$$
+
+$$
+F_2(1 + \sqrt{5}, -2) \approx (3.236, -2)
+$$
+
 7. **Numerical Eccentricity:**
-   $$
-   e = \frac{c}{a} = \frac{\sqrt{5}}{3} \approx 0.745
-   $$
+
+$$
+e = \frac{c}{a} = \frac{\sqrt{5}}{3} \approx 0.745
+$$
 
 #### Step 5: Qualitative 2D Sketch
 ```
@@ -182,15 +198,19 @@ $$
 $$
 
 - **For $c = 0$ ($xy$-plane):**
-  $$
-  4x^2 + y^2 = 0 \implies x = 0 \quad \text{and} \quad y = 0
-  $$
+
+$$
+4x^2 + y^2 = 0 \implies x = 0 \quad \text{and} \quad y = 0
+$$
+
   The slice at $z = 0$ is the single point $(0, 0, 0)$.
 - **For $c \ne 0$:**
   Divide both sides by $c^2$:
-  $$
-  \frac{4x^2}{c^2} + \frac{y^2}{c^2} = 1 \implies \frac{x^2}{(|c|/2)^2} + \frac{y^2}{|c|^2} = 1
-  $$
+
+$$
+\frac{4x^2}{c^2} + \frac{y^2}{c^2} = 1 \implies \frac{x^2}{(|c|/2)^2} + \frac{y^2}{|c|^2} = 1
+$$
+
   In the horizontal plane $z = c$, this represents an **ellipse** centered at $(0, 0, c)$ with:
   - Semiaxis along $x$: $a_x(c) = \frac{|c|}{2}$
   - Semiaxis along $y$: $b_y(c) = |c|$
@@ -264,9 +284,11 @@ we conclusively identify the surface as an **Elliptic Cone** (with vertical axis
 
 ### Summary for Equation 1:
 - **Canonical Form:**
-  $$
-  \frac{(x - 1)^2}{9} + \frac{(y + 2)^2}{4} = 1 \quad \left(\text{or } \frac{(x - 1)^2}{3^2} + \frac{(y + 2)^2}{2^2} = 1\right)
-  $$
+
+$$
+\frac{(x - 1)^2}{9} + \frac{(y + 2)^2}{4} = 1 \quad \left(\text{or } \frac{(x - 1)^2}{3^2} + \frac{(y + 2)^2}{2^2} = 1\right)
+$$
+
 - **Curve Type:** **Ellipse**
 - **Center:** $S(1, -2)$
 - **Semiaxes:** $a = 3$ (horizontal, semimajor), $b = 2$ (vertical, semiminor)
@@ -289,31 +311,40 @@ we conclusively identify the surface as an **Elliptic Cone** (with vertical axis
 
 1. **Verify Equation 1 Algebraically:**
    Expand the canonical form:
-   $$
-   4(x - 1)^2 + 9(y + 2)^2 = 4(x^2 - 2x + 1) + 9(y^2 + 4y + 4) = 4x^2 - 8x + 4 + 9y^2 + 36y + 36
-   $$
+
+$$
+4(x - 1)^2 + 9(y + 2)^2 = 4(x^2 - 2x + 1) + 9(y^2 + 4y + 4) = 4x^2 - 8x + 4 + 9y^2 + 36y + 36
+$$
+
    Sum of constant terms: $4 + 36 = 40$.
    Subtracting 36 from both sides:
-   $$
-   4x^2 + 9y^2 - 8x + 36y + (40 - 36) = 4x^2 + 9y^2 - 8x + 36y + 4 = 0.
-   $$
+
+$$
+4x^2 + 9y^2 - 8x + 36y + (40 - 36) = 4x^2 + 9y^2 - 8x + 36y + 4 = 0.
+$$
+
    The expanded equation matches the original equation exactly.
 
 2. **Verify Point on Equation 1:**
    Substitute the upper co-vertex $(1, 0)$:
-   $$
-   4(1)^2 + 9(0)^2 - 8(1) + 36(0) + 4 = 4 - 8 + 4 = 0 \quad \text{(correct)}.
-   $$
+
+$$
+4(1)^2 + 9(0)^2 - 8(1) + 36(0) + 4 = 4 - 8 + 4 = 0 \quad \text{(correct)}.
+$$
+
    Substitute the vertex $(4, -2)$:
-   $$
-   4(16) + 9(4) - 8(4) + 36(-2) + 4 = 64 + 36 - 32 - 72 + 4 = 0 \quad \text{(correct)}.
-   $$
+
+$$
+4(16) + 9(4) - 8(4) + 36(-2) + 4 = 64 + 36 - 32 - 72 + 4 = 0 \quad \text{(correct)}.
+$$
 
 3. **Verify Scale Ratio of Equation 2:**
    For $z = 2$:
-   $$
-   4x^2 + y^2 = 4 \implies x^2 + \frac{y^2}{4} = 1.
-   $$
+
+$$
+4x^2 + y^2 = 4 \implies x^2 + \frac{y^2}{4} = 1.
+$$
+
    The semiaxes are $a_x = 1$ and $b_y = 2$, exactly in ratio $1 : 2$.
 
 ---
